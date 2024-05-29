@@ -1,0 +1,282 @@
+:root {
+  --ff-sans: "Karla", sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-150: 0.825rem; /*14px*/
+  --fs-200: 1rem; /*16px*/
+  --fs-250: 1.125rem; /*18px*/
+  --fs-300: 1.25rem; /*20px*/
+  --fs-400: 2rem; /*32px*/
+  --fs-500: 2.5rem; /*40px*/
+  --fs-600: 3rem; /*48px*/
+  --fs-700: 4rem; /*64px*/
+  --fs-800: 5.5rem; /*88px*/
+
+  --lh-h1: 100%;
+  --lh-body: 150%;
+
+  --spacing-h1: -1px;
+
+  /*    COLORS  */
+  --clr-primary-100: hsl(0, 66%, 54%);
+  --clr-primary-200: hsl(169, 82%, 27%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(148, 38%, 91%);
+  --clr-neutral-400: hsl(186, 15%, 59%);
+  --clr-neutral-900: hsl(187, 24%, 22%);
+
+  /*--clr-neutral-400-25: hsl(240, 10%, 57%, 25%);*/
+  /*SPACING*/
+  --spc-00: 8px;
+  --spc-100: 12px;
+  --spc-200: 16px;
+  --spc-400: 24px;
+  --spc-600: 32px;
+  --spc-700: 40px;
+  --spc-900: 128px;
+  /*SIZES*/
+  --size-600: 4rem;
+
+  /*ALL SIZES*/
+  --fs-h: var(--fs-400);
+  --fs-b: var(var(--fs-200));
+  --fs-select: var(--fs-250);
+}
+@media (min-width: 40rem) {
+  /*TABLET*/
+  :root {
+  }
+}
+@media (min-width: 60rem) {
+  /*DEKTOP*/
+  :root {
+  }
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-sans);
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  text-rendering: optimizeSpeed;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--clr-neutral-400);
+}
+
+.card {
+  background-color: var(--clr-neutral-100);
+  padding: var(--spc-700);
+  border-radius: 10px;
+  margin-inline: 1rem;
+  margin-block: 5rem;
+}
+/*
+input:autofill {
+  font-family: cursive;
+}
+input:-webkit-autofill {
+  font-family: cursive;
+}*/
+.card h1 {
+  font-size: var(--fs-h);
+  line-height: var(--lh-h1);
+  color: var(--clr-primary-900);
+  margin-bottom: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+}
+.name input {
+  order: 2;
+}
+.name p {
+  order: 3;
+}
+
+@media (max-width: 600px) {
+  .name {
+    grid-template-columns: 1fr;
+  }
+  .name input {
+    order: 1;
+  }
+  .name label {
+    order: 1;
+  }
+  .name p {
+    order: 1;
+  }
+}
+
+.star::after {
+  content: "*";
+  color: var(--clr-primary-200);
+
+  margin-left: 0.5rem;
+}
+#email {
+  width: 100%; /*mudei isto ontem*/
+}
+*:not(:first-child) + p {
+  visibility: hidden;
+  color: var(--clr-primary-100);
+}
+#radio-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+input[type="radio"]:checked {
+  accent-color: var(--clr-neutral-900);
+}
+input[type="checkbox"] {
+  width: 1em;
+  height: 1rem;
+  accent-color: green;
+}
+
+#message {
+  outline: none;
+  resize: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  border-radius: 10px;
+  height: 5rem;
+  /*vertical-align: middle; /* Aligns the box vertically within a line */
+  padding: 0.2rem 0.5rem;
+}
+
+#confirmation {
+  display: none;
+  border-radius: 10px;
+  padding: 1rem;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-200);
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-width: 350px;
+  transition: opacity 2s linear;
+}
+#confirmation p:first-child {
+  position: relative;
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+#confirmation p:first-child::before {
+  content: url("./assets/images/icon-success-check.svg");
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+input[type="radio"]:checked {
+  background-color: var(--clr-primary-200);
+}
+
+#submit {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--clr-primary-200);
+  padding-block: 1rem;
+  color: var(--clr-neutral-100);
+}
+
+/*UTILITIES*/
+.dp-block {
+  display: block;
+}
+.bd-red {
+  border-color: var(--clr-primary-100) !important;
+}
+.bd-green {
+  border-color: var(--clr-neutral-900);
+}
+.bd-radius-100 {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+.clr-gr-900 {
+  color: var(--clr-neutral-900);
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+  <title>Contact form</title>
+  <script src="https://cdn.jsdelivr.net/npm/validator@13.6.0/validator.min.js"></script>
+
+</head>
+
+<body>
+  <div id="confirmation">
+    <p>Message Sent!</p>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+  <article class="card">
+    <h1>Contact Us</h1>
+    <form action="index.html">
+
+      <div class="name">
+        <label for="fname" class="star clr-gr-900">First Name</label>
+        <input type="text" id="fname" name="fname" class="bd-radius-100 bd-green" required>
+        <p>This field is empty</p>
+
+        <label for="lname" class="star clr-gr-900">Last Name</label>
+        <input type="text" id="lname" class="bd-radius-100 bd-green" name="lname" required>
+        <p>This field is empty</p>
+      </div>
+
+      <label for="email" class="star dp-block clr-gr-900">Email Address</label>
+      <input type="email" id="email" name="email" class="bd-radius-100 bd-green" required>
+      <p>This field is empty</p>
+
+      <legend id="legend" class="star clr-gr-900">Query Type</legend>
+      <div id="radio-buttons">
+        <div class="bd-radius-100">
+          <input type="radio" id="gEnquiry" name="query">
+          <label for="gEnquiry">General Enquiry</label>
+        </div>
+
+
+        <div class="bd-radius-100">
+          <input type="radio" id="sRequest" name="query">
+          <label for="sRequest">Support Request</label>
+        </div>
+
+
+      </div>
+      <p>Please select a query type</p>
+
+      <label for="message" class="star dp-block clr-gr-900" style="margin-top: 1rem;">Message</label>
+      <textarea name=" message" id="message" class="bd-radius-100"></textarea>
+      <p>This field is empty</p>
+
+      <div style="margin-top: 1rem;">
+        <input type="checkbox" id="consent" name="checkbox">
+        <label for="consent" class="star">I consent to being contacted by the team</label>
+        <p style="margin-bottom: 1rem;">To submit this form, please consent to being contacted</p>
+      </div>
+
+
+      <button type=" submit" class="button" id="submit" onclick="validateForm(event)">Submit</button>
+    </form>
+  </article>
+
+
+  <!--
+
+  Please enter a valid email address
+  This field is required
+
+  
+  Please select a query type
+
+  Message
+  This field is required
+
+  
+  To submit this form, please consent to being contacted
+
+  
+
+  Message Sent!
+  Thanks for completing the form. We'll be in touch soon!
+-->
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
